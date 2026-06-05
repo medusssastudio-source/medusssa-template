@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ⚠️ REGLA INMUTABLE: NUNCA usar `overflow: clip` en este archivo.
+   El autoprefixer no lo reconoce y rompe TODA la compilación CSS.
+   Usar `overflow: hidden` + padding. */
+
+@layer utilities {
+  @keyframes skeleton-shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+}
+
+@layer base {
+  :root {
+    /* ── Design System Tokens (Claude Design ↔ Claude Code) ──
+       🎨 PALETA PLACEHOLDER — reemplazar con el branding de cada cliente.
+       Los exports de Claude Design usan estos tokens directamente:
+       mantener los NOMBRES, cambiar solo los VALORES. */
+
+    /* Escala de marca (accent) */
+    --accent-50: #eef2ff;
+    --accent-100: #e0e7ff;
+    --accent-300: #a5b4fc;
+    --accent-500: #818cf8;
+    --accent-700: #6366f1;
+    --accent-900: #4f46e5;
+    --accent-950: #4338ca;
+
+    /* Grises */
+    --gray-100: #e8e8e6;
+    --gray-200: #dcdcda;
+    --gray-300: #c4c4c4;
+    --gray-500: #9a9999;
+    --gray-700: #6b7280;
+    --gray-900: #2d2d2d;
+    --gray-950: #1f1f1f;
+
+    /* Fondos */
+    --cream: #fafaf8;
+    --white: #ffffff;
+    --charcoal: #1f1f1f;
+
+    /* Gradientes */
+    --gradient-warm: linear-gradient(135deg, var(--cream) 0%, var(--accent-100) 100%);
+    --gradient-accent-soft: linear-gradient(135deg, var(--accent-100) 0%, var(--accent-500) 100%);
+
+    /* Tokens semánticos */
+    --bg: var(--cream);
+    --fg: var(--gray-900);
+    --fg-muted: var(--gray-700);
+    --fg-subtle: var(--gray-500);
+    --fg-inv: var(--cream);
+    --accent: var(--accent-900);
+
+    /* Fuentes — definidas en src/lib/fonts.ts */
+    --font-display-stack: var(--font-display), system-ui, sans-serif;
+    --font-body-stack: var(--font-body), system-ui, -apple-system, sans-serif;
+    --font-script-stack: var(--font-script), cursive;
+
+    /* Radios */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-xl: 24px;
+    --radius-2xl: 32px;
+    --radius-full: 999px;
+
+    /* Sombras (teñir con el color de marca al rebrandear) */
+    --shadow-sm: 0 2px 8px rgba(79, 70, 229, 0.06);
+    --shadow-md: 0 4px 16px rgba(79, 70, 229, 0.1);
+    --shadow-lg: 0 12px 32px rgba(79, 70, 229, 0.14);
+    --shadow-xl: 0 24px 48px rgba(79, 70, 229, 0.18);
+    --shadow-glass: 0 8px 32px rgba(45, 45, 45, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+
+    /* Easing */
+    --ease-in-out-cubic: cubic-bezier(0.65, 0, 0.35, 1);
+    --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+    --dur-hover: 300ms;
+
+    /* Layout */
+    --container-max: 1280px;
+    --container-pad: clamp(20px, 5vw, 80px);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-brand-cream text-brand-charcoal;
+    font-family: var(--font-body-stack);
+    line-height: 1.6;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display-stack);
+    line-height: 1.3;
+  }
+
+  *:focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2;
+  }
+}
+
+/* ============================================================
+   PAGE TRANSITIONS — next-view-transitions (View Transitions API)
+   ============================================================ */
+@keyframes vt-fade-out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+}
+@keyframes vt-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+::view-transition-old(root) {
+  animation: vt-fade-out 180ms ease-out both;
+}
+::view-transition-new(root) {
+  animation: vt-fade-in 280ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none !important;
+  }
+}
+
+/* ============================================================
+   CSS DE SECCIONES (exports de Claude Design) — agregar debajo
+   ============================================================ */
