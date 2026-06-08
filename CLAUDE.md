@@ -1,6 +1,7 @@
 # 🟣 {{NOMBRE_PROYECTO}} — Contexto para Claude Code
 
 > **TEMPLATE BASE de Medusssa Studio.** Al iniciar un proyecto de cliente:
+>
 > 1. Reemplazar `{{NOMBRE_PROYECTO}}` y `{{CLIENTE}}` en este archivo
 > 2. Personalizar branding: `apps/web/tailwind.config.ts` + `apps/web/src/lib/fonts.ts` + `globals.css` (tokens)
 > 3. Llenar `docs/MASTER.md` con el alcance acordado
@@ -61,18 +62,18 @@ Actualiza `docs/BITACORA.md` (entrada nueva arriba): fecha, tasks cerradas, comm
 
 ## 🧱 Stack
 
-| Capa | Tecnología |
-| --- | --- |
-| Framework | Next.js 14 (App Router, Server Components) |
-| Lenguaje | TypeScript estricto |
-| Estilos | Tailwind CSS — SOLO tokens semánticos (`primary`, `brand-*`, `font-display`/`font-sans`) |
-| Animación | `<AnimatedSection>` (IntersectionObserver+CSS) · Framer Motion solo hover |
-| Smooth scroll | Lenis |
-| Forms | React Hook Form + Zod (validación doble capa: cliente Y servidor) |
-| DB | Supabase (Postgres + Auth + Storage), RLS activo siempre |
-| Email | Resend (`src/lib/email.ts` — branding por env vars) |
-| Deploy | Vercel |
-| Monorepo | Turborepo + pnpm workspaces |
+| Capa          | Tecnología                                                                               |
+| ------------- | ---------------------------------------------------------------------------------------- |
+| Framework     | Next.js 14 (App Router, Server Components)                                               |
+| Lenguaje      | TypeScript estricto                                                                      |
+| Estilos       | Tailwind CSS — SOLO tokens semánticos (`primary`, `brand-*`, `font-display`/`font-sans`) |
+| Animación     | `<AnimatedSection>` (IntersectionObserver+CSS) · Framer Motion solo hover                |
+| Smooth scroll | Lenis                                                                                    |
+| Forms         | React Hook Form + Zod (validación doble capa: cliente Y servidor)                        |
+| DB            | Supabase (Postgres + Auth + Storage), RLS activo siempre                                 |
+| Email         | Resend (`src/lib/email.ts` — branding por env vars)                                      |
+| Deploy        | Vercel                                                                                   |
+| Monorepo      | Turborepo + pnpm workspaces                                                              |
 
 ## 🎨 Sistema de branding
 
@@ -106,6 +107,10 @@ Rebrandear un cliente = editar esos 3 archivos. NUNCA hardcodear colores/fuentes
 ```
 {{proyecto}}/
 ├── CLAUDE.md                ← este archivo
+├── catalogo/                ← 🗂️ CATÁLOGO de piezas reutilizables (ver catalogo/CATALOGO.md)
+│   ├── secciones/           ← bloques visuales genericizados
+│   ├── modulos/             ← recetas de integración (iCal, datos, checkout…)
+│   └── plantillas/          ← recetas completas por tipo de página
 ├── docs/                    ← MASTER, BITACORA, SPRINT_ACTUAL, decisiones/, sprints/
 ├── design/exports/          ← HTML versionados de Claude Design
 ├── apps/web/                ← Next.js
