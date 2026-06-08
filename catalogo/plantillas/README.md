@@ -19,11 +19,11 @@ plantillas/<tipo>/
 
 ## Tipos previstos
 
-| Tipo                     | Estado      | Piezas que combina                                                                                                      |
-| ------------------------ | ----------- | ----------------------------------------------------------------------------------------------------------------------- |
-| **Hospedaje**            | ⏳ planeado | Navbar + Hero + Galería · módulos [Reservas](../modulos/datos-reservas.md) + [iCal](../modulos/ical-sync.md) + Checkout |
-| **Tienda digital**       | ⏳ planeado | módulos [Contenido digital](../modulos/datos-contenido-digital.md) + Checkout                                           |
-| **Inmobiliaria**         | ⏳ planeado | módulo [Inmobiliaria + Leads](../modulos/datos-inmobiliaria.md)                                                         |
-| **Landing / Portafolio** | ⏳ planeado | secciones visuales, sin módulos de pago                                                                                 |
+| Tipo                                   | Estado          | Piezas que combina                                                                                                      |
+| -------------------------------------- | --------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| **[Hospedaje](./hospedaje/RECETA.md)** | ✅ receta lista | Navbar + Hero + Galería · módulos [Reservas](../modulos/datos-reservas.md) + [iCal](../modulos/ical-sync.md) + Checkout |
+| **Tienda digital**                     | ⏳ planeado     | módulos [Contenido digital](../modulos/datos-contenido-digital.md) + Checkout                                           |
+| **Inmobiliaria**                       | ⏳ planeado     | módulo [Inmobiliaria + Leads](../modulos/datos-inmobiliaria.md)                                                         |
+| **Landing / Portafolio**               | ⏳ planeado     | secciones visuales, sin módulos de pago                                                                                 |
 
-> Siguiente paso natural: crear `plantillas/hospedaje/` reutilizando lo de Mobbitrips + KeyHandy (es el tipo con más piezas ya listas).
+> ✅ **Hospedaje** ya tiene su receta completa (RECETA + MASTER + decisiones + SPRINT + BITACORA). Siguiente plantilla natural: **Tienda digital** o **Inmobiliaria** (ambas con su módulo de datos ya listo).

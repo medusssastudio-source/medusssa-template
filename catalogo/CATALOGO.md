@@ -75,12 +75,12 @@ Recetas de integración: el "cómo conectar" una capacidad de negocio. → ver [
 
 Recetas completas por tipo de página: combinan secciones + módulos + docs pre-llenados. → ver [`plantillas/README.md`](./plantillas/README.md)
 
-| Plantilla            | Estado      | Combina                                                  |
-| -------------------- | ----------- | -------------------------------------------------------- |
-| Hospedaje            | ⏳ planeado | Navbar + Hero + Galería + módulos Reservas/iCal/Checkout |
-| Tienda digital       | ⏳ planeado | módulos Contenido digital + Checkout                     |
-| Inmobiliaria         | ⏳ planeado | módulo Inmobiliaria + Leads                              |
-| Landing / Portafolio | ⏳ planeado | secciones visuales, sin módulos de pago                  |
+| Plantilla                                     | Estado          | Combina                                                  |
+| --------------------------------------------- | --------------- | -------------------------------------------------------- |
+| [Hospedaje](./plantillas/hospedaje/RECETA.md) | ✅ receta lista | Navbar + Hero + Galería + módulos Reservas/iCal/Checkout |
+| Tienda digital                                | ⏳ planeado     | módulos Contenido digital + Checkout                     |
+| Inmobiliaria                                  | ⏳ planeado     | módulo Inmobiliaria + Leads                              |
+| Landing / Portafolio                          | ⏳ planeado     | secciones visuales, sin módulos de pago                  |
 
 ---
 
